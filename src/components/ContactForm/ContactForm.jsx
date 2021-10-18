@@ -78,13 +78,7 @@ const ContactForm = ({ onSubmit, contacts }) => {
     );
 }
 
-const mapStateToProps = (state) => {
-    localStorage.setItem('contacts', JSON.stringify(state.contacts.items));
-
-    return {
-        contacts: state.contacts.items,
-    }
-}
+const mapStateToProps = (state) => ({ contacts: state.contacts.items });
 
 const mapDispatchToProps = dispatch => ({
     onSubmit: (name, value) => dispatch(addContact(name, value)),
